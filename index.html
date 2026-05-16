@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diah Ayu Wulan Pratiwi</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(
+        135deg,
+        #140a1f,
+        #2a1238,
+        #4a1d52,
+        #1b1027
+    );
+    background-size:400% 400%;
+    animation:bgMove 14s ease infinite;
+    color:white;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.wrapper{
+    width:100%;
+    max-width:430px;
+    padding:40px 22px;
+    text-align:center;
+}
+
+/* PROFILE */
+
+.profile{
+    animation:fadeDown .8s ease;
+}
+
+.profile-frame{
+    width:165px;
+    height:165px;
+    margin:auto;
+    padding:6px;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        #f9a8d4,
+        #d946ef,
+        #a855f7
+    );
+    box-shadow:
+        0 0 25px rgba(236,72,153,.45),
+        0 0 55px rgba(168,85,247,.35);
+    animation:pulse 3s infinite;
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center top;
+    border:4px solid rgba(255,255,255,.12);
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:
+        0 0 25px rgba(236,72,153,.45),
+        0 0 55px rgba(168,85,247,.35);
+    }
+
+    50%{
+        transform:scale(1.03);
+        box-shadow:
+        0 0 35px rgba(236,72,153,.65),
+        0 0 70px rgba(168,85,247,.45);
+    }
+}
+
+.profile h1{
+    margin-top:20px;
+    font-size:28px;
+    font-weight:700;
+    line-height:1.3;
+}
+
+.divider{
+    width:75px;
+    height:4px;
+    margin:14px auto 35px;
+    border-radius:20px;
+    background:linear-gradient(
+        90deg,
+        #f472b6,
+        #c084fc
+    );
+}
+
+/* CARD */
+
+.card{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px;
+    margin-bottom:18px;
+
+    border-radius:22px;
+
+    text-decoration:none;
+    color:white;
+
+    background:rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
+
+    transition:.35s ease;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.28),
+        transparent
+    );
+
+    transition:.6s;
+}
+
+.card:hover::before{
+    left:120%;
+}
+
+.card:hover{
+    transform:translateY(-5px) scale(1.02);
+}
+
+/* BRAND GLOW */
+
+.whatsapp:hover{
+    box-shadow:
+        0 0 25px rgba(37,211,102,.65);
+}
+
+.email:hover{
+    box-shadow:
+        0 0 25px rgba(236,72,153,.6);
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.icon{
+    width:54px;
+    height:54px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.icon img{
+    width:26px;
+}
+
+/* ICON COLOR */
+
+.whatsapp .icon{
+    background:linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
+}
+
+.email .icon{
+    background:linear-gradient(
+        135deg,
+        #ec4899,
+        #d946ef
+    );
+}
+
+.text{
+    text-align:left;
+}
+
+.text b{
+    display:block;
+    font-size:16px;
+    font-weight:700;
+}
+
+.text span{
+    font-size:13px;
+    opacity:.82;
+}
+
+.arrow{
+    font-size:24px;
+    opacity:.5;
+}
+
+/* RIPPLE */
+
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+    animation:ripple .6s linear;
+    background:rgba(255,255,255,.35);
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+/* ENTRY ANIMATION */
+
+.card{
+    opacity:0;
+    transform:translateY(25px);
+}
+
+.card:nth-child(2){
+    animation:fadeUp .5s ease forwards .25s;
+}
+
+.card:nth-child(3){
+    animation:fadeUp .5s ease forwards .45s;
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:38px;
+    opacity:.75;
+}
+
+.heart{
+    font-size:24px;
+    color:#f472b6;
+    margin-bottom:10px;
+}
+
+footer p{
+    font-size:13px;
+    line-height:1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- PROFILE -->
+    <div class="profile">
+
+        <div class="profile-frame">
+            <img src="profile.jpg">
+        </div>
+
+        <h1>Diah Ayu Wulan Pratiwi</h1>
+
+        <div class="divider"></div>
+
+    </div>
+
+    <!-- WHATSAPP -->
+    <a class="card whatsapp"
+       href="https://wa.me/6283812811125"
+       target="_blank">
+
+        <div class="left">
+
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png">
+            </div>
+
+            <div class="text">
+                <b>WhatsApp</b>
+                <span>Chat langsung via WhatsApp</span>
+            </div>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <!-- EMAIL -->
+    <a class="card email"
+       href="mailto:diahayuwp21@gmail.com">
+
+        <div class="left">
+
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png">
+            </div>
+
+            <div class="text">
+                <b>Email</b>
+                <span>Diah Ayu Wulan Pratiwi</span>
+            </div>
+
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="heart">❤</div>
+
+        <p>Terima kasih telah berkunjung!</p>
+
+        <p>© 2026 Diah Ayu Wulan Pratiwi</p>
+
+    </footer>
+
+</div>
+
+<script>
+
+document.querySelectorAll('.card').forEach(btn=>{
+
+    btn.addEventListener('click',function(e){
+
+        const circle=document.createElement('span');
+
+        const d=Math.max(
+            this.clientWidth,
+            this.clientHeight
+        );
+
+        const r=d/2;
+
+        circle.style.width=
+        circle.style.height=d+'px';
+
+        circle.style.left=
+        (e.offsetX-r)+'px';
+
+        circle.style.top=
+        (e.offsetY-r)+'px';
+
+        circle.classList.add('ripple');
+
+        const ripple=this.querySelector('.ripple');
+
+        if(ripple) ripple.remove();
+
+        this.appendChild(circle);
+
+    })
+
+})
+
+</script>
+
+</body>
+</html>
