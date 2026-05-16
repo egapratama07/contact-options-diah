@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diah Ayu Wulan Pratiwi</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(270deg,#2b1331,#4b1d52,#1f1030);
+    background-size:600% 600%;
+    animation:bgMove 12s ease infinite;
+    color:white;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.wrapper{
+    max-width:420px;
+    width:100%;
+    padding:30px 20px;
+    text-align:center;
+}
+
+/* PROFILE */
+.profile{
+    animation:fadeDown .8s ease;
+}
+
+.profile img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:4px solid rgba(244,114,182,.6);
+    object-fit:cover;
+    box-shadow:0 0 30px rgba(244,114,182,.8);
+    animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        box-shadow:0 0 20px rgba(244,114,182,.6)
+    }
+    50%{
+        box-shadow:0 0 40px rgba(244,114,182,1)
+    }
+}
+
+.profile h1{
+    margin-top:15px;
+    font-size:26px;
+    line-height:1.3;
+}
+
+.divider{
+    width:60px;
+    height:3px;
+    background:linear-gradient(90deg,#f472b6,#c084fc);
+    margin:10px auto 30px;
+    border-radius:10px;
+}
+
+/* CARD */
+.card{
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px;
+    border-radius:18px;
+    margin-bottom:16px;
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 25px rgba(0,0,0,.45);
+    transition:.3s ease;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+    transition:.5s;
+}
+
+.card:hover::before{
+    left:100%;
+}
+
+.card:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+/* Glow */
+.whatsapp:hover{
+    box-shadow:0 0 25px #25D366;
+}
+
+.email:hover{
+    box-shadow:0 0 25px #ec4899;
+}
+
+.linkedin:hover{
+    box-shadow:0 0 25px #a855f7;
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.icon img{
+    width:24px;
+}
+
+/* ICON BACKGROUND */
+.whatsapp .icon{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+}
+
+.email .icon{
+    background:linear-gradient(135deg,#ec4899,#f472b6);
+}
+
+.linkedin .icon{
+    background:linear-gradient(135deg,#9333ea,#c084fc);
+}
+
+.text{
+    text-align:left;
+}
+
+.text b{
+    display:block;
+    font-size:15px;
+}
+
+.text span{
+    font-size:13px;
+    opacity:.85;
+}
+
+.arrow{
+    font-size:20px;
+    opacity:.5;
+}
+
+/* Ripple */
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+    animation:ripple .6s linear;
+    background:rgba(255,255,255,0.4);
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+/* Animation */
+.card{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+.card:nth-child(2){
+    animation:fadeUp .5s ease forwards .2s;
+}
+
+.card:nth-child(3){
+    animation:fadeUp .5s ease forwards .4s;
+}
+
+.card:nth-child(4){
+    animation:fadeUp .5s ease forwards .6s;
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+footer{
+    margin-top:35px;
+    font-size:13px;
+    opacity:.7;
+}
+
+.heart{
+    color:#f472b6;
+    font-size:22px;
+    margin-bottom:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="profile">
+        <img src="profile.jpg">
+        <h1>Diah Ayu Wulan Pratiwi</h1>
+        <div class="divider"></div>
+    </div>
+
+    <!-- WhatsApp -->
+    <a class="card whatsapp" href="https://wa.me/6283812811125" target="_blank">
+
+        <div class="left">
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png">
+            </div>
+
+            <div class="text">
+                <b>WhatsApp</b>
+                <span>Chat langsung via WhatsApp</span>
+            </div>
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <!-- Email -->
+    <a class="card email" href="mailto:diahayuwp21@gmail.com">
+
+        <div class="left">
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png">
+            </div>
+
+            <div class="text">
+                <b>Email</b>
+                <span>Diah Ayu Wulan Pratiwi</span>
+            </div>
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <!-- LinkedIn -->
+    <a class="card linkedin" href="#" target="_blank">
+
+        <div class="left">
+            <div class="icon">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png">
+            </div>
+
+            <div class="text">
+                <b>LinkedIn</b>
+                <span>Diah Ayu Wulan Pratiwi</span>
+            </div>
+        </div>
+
+        <div class="arrow">›</div>
+
+    </a>
+
+    <footer>
+        <div class="heart">❤</div>
+        <p>Terima kasih telah berkunjung!</p>
+        <p>© 2026 Diah Ayu Wulan Pratiwi</p>
+    </footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.card').forEach(btn=>{
+    btn.addEventListener('click',function(e){
+
+        const circle=document.createElement('span');
+
+        const d=Math.max(this.clientWidth,this.clientHeight);
+        const r=d/2;
+
+        circle.style.width=circle.style.height=d+'px';
+
+        circle.style.left=(e.offsetX-r)+'px';
+        circle.style.top=(e.offsetY-r)+'px';
+
+        circle.classList.add('ripple');
+
+        const ripple=this.querySelector('.ripple');
+
+        if(ripple) ripple.remove();
+
+        this.appendChild(circle);
+
+    })
+})
+</script>
+
+</body>
+</html>
